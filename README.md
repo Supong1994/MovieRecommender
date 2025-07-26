@@ -62,3 +62,16 @@ create_matrix(df): Builds the sparse user-item matrix and mapping dictionaries.
 find_similar_movies(movie_id, X, k): Returns the top K similar movies using cosine similarity.
 
 recommend_movies_for_user(user_id, X, ...): Given a user, recommends similar movies based on their preferences.
+
+
+Web App Interface with Streamlit (Interface.py)
+To make the movie recommender system interactive and accessible to non-technical users, Streamlit was integrated as a front-end framework. Streamlit allows quick deployment of machine learning models with a clean and responsive web UI — all using pure Python.
+
+🔧 Why Streamlit?
+Streamlit was chosen for its simplicity, minimal setup, and ability to quickly build interactive data apps with:
+
+No need for HTML/CSS/JS
+
+Fast reloading on code changes
+
+Built-in widgets for sliders, dropdowns, text input, etc.
