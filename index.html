@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f4f4f4;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .results {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Movie Recommendation System</h2>
+    <form method="post" action="/recommend">
+        <label for="user_id">User ID:</label>
+        <input type="number" name="user_id" required>
+
+        <label for="k">Number of Recommendations:</label>
+        <input type="number" name="k" value="5" required>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if watched_movie %}
+    <div class="results">
+        <h3>Since you watched "{{ watched_movie }}", you might also like:</h3>
+        <ul>
+            {% for movie in recommendations %}
+                <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
